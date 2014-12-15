@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2dI-wb-23h">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="gco-ux-wBL">
+            <objects>
+                <navigationController id="2dI-wb-23h" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HQX-xe-kDo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="M5u-KJ-SGm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pcm-Z3-Q2D" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-204" y="424"/>
+        </scene>
+        <!--Coffee Calculator-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="CoffeeCalculator" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +32,283 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OXx-Mh-pAQ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                                <connections>
+                                    <segue destination="FAR-Iw-FPx" kind="embed" id="Epw-vV-0Kv"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HGZ-Od-kmK">
+                                <rect key="frame" x="0.0" y="300" width="600" height="300"/>
+                                <connections>
+                                    <segue destination="noQ-Tl-SiH" kind="embed" id="YHH-t2-uo6"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="HGZ-Od-kmK" secondAttribute="trailing" constant="-16" id="9PR-PB-CSw"/>
+                            <constraint firstItem="HGZ-Od-kmK" firstAttribute="top" secondItem="OXx-Mh-pAQ" secondAttribute="bottom" id="KFF-2H-68l"/>
+                            <constraint firstItem="OXx-Mh-pAQ" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="MAS-dN-eAd"/>
+                            <constraint firstItem="HGZ-Od-kmK" firstAttribute="top" secondItem="OXx-Mh-pAQ" secondAttribute="bottom" id="VCj-Vs-IUw"/>
+                            <constraint firstItem="HGZ-Od-kmK" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="bYM-5V-JKo"/>
+                            <constraint firstItem="OXx-Mh-pAQ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="hHD-XJ-wry"/>
+                            <constraint firstItem="HGZ-Od-kmK" firstAttribute="height" secondItem="OXx-Mh-pAQ" secondAttribute="height" id="ksv-n5-1jT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OXx-Mh-pAQ" secondAttribute="trailing" constant="-16" id="s5o-XW-n4M"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="HGZ-Od-kmK" secondAttribute="bottom" id="xSj-1e-l4H"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Coffee Calculator" id="fnD-lH-fgV"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Calculator View Controller-->
+        <scene sceneID="eA0-nQ-luP">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="FAR-Iw-FPx" customClass="CalculatorViewController" customModule="CoffeeCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fdz-rj-VhB"/>
+                        <viewControllerLayoutGuide type="bottom" id="jBc-dF-Imc"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="qzr-l7-8Km">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="21g" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PJR-zd-Lrs">
+                                <rect key="frame" x="46" y="89" width="331" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="VEb-yd-ZFQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="300ml" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xzz-cF-YaS">
+                                <rect key="frame" x="46" y="168" width="331" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="LO9-OY-9nJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eGS-0O-VTz">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="60"/>
+                            </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ID7-Hz-9Ev">
+                                <rect key="frame" x="0.0" y="244" width="600" height="56"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPm-XJ-brM">
+                                <rect key="frame" x="524" y="90" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.927734375" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="SkS-6F-loU"/>
+                                    <constraint firstAttribute="height" constant="50" id="d7N-ot-tns"/>
+                                </constraints>
+                                <state key="normal" title="-">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="decrementCoffee:" destination="FAR-Iw-FPx" eventType="touchUpInside" id="VvB-1W-gK8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrm-1q-eNz">
+                                <rect key="frame" x="466" y="168" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.927734375" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="6kT-Jo-CGd"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="MA9-4u-0cQ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="kst-dP-kVv"/>
+                                    <constraint firstAttribute="width" constant="50" id="sDC-uO-Byy"/>
+                                </constraints>
+                                <state key="normal" title="+">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="incrementWater:" destination="FAR-Iw-FPx" eventType="touchUpInside" id="Vgc-nH-4HB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5T0-ZQ-xUI">
+                                <rect key="frame" x="524" y="168" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.927734375" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="ARq-ik-1X1"/>
+                                    <constraint firstAttribute="width" constant="50" id="QW0-Ol-eyG"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="SAQ-ar-u63"/>
+                                    <constraint firstAttribute="height" constant="50" id="oWJ-WG-TlL"/>
+                                </constraints>
+                                <state key="normal" title="-">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="decrementWater:" destination="FAR-Iw-FPx" eventType="touchUpInside" id="rTu-4L-QDU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uKU-DB-xCf">
+                                <rect key="frame" x="466" y="90" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.927734375" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Znr-pM-fnE"/>
+                                    <constraint firstAttribute="height" constant="50" id="sBb-qO-PFN"/>
+                                </constraints>
+                                <state key="normal" title="+">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="incrementCoffee:" destination="FAR-Iw-FPx" eventType="touchUpInside" id="Ev0-UB-3Ro"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uKU-DB-xCf" firstAttribute="leading" secondItem="PJR-zd-Lrs" secondAttribute="trailing" constant="20" id="1W8-oy-8T6"/>
+                            <constraint firstItem="5T0-ZQ-xUI" firstAttribute="leading" secondItem="vrm-1q-eNz" secondAttribute="trailing" constant="8" id="2Yg-cB-v15"/>
+                            <constraint firstItem="xzz-cF-YaS" firstAttribute="leading" secondItem="qzr-l7-8Km" secondAttribute="leadingMargin" constant="10" id="4AB-u8-wqf"/>
+                            <constraint firstItem="PJR-zd-Lrs" firstAttribute="width" secondItem="xzz-cF-YaS" secondAttribute="width" id="8Lu-Rx-YcA"/>
+                            <constraint firstItem="PJR-zd-Lrs" firstAttribute="top" secondItem="eGS-0O-VTz" secondAttribute="bottom" constant="30" id="8jR-Ga-Q4e"/>
+                            <constraint firstItem="PJR-zd-Lrs" firstAttribute="height" secondItem="uKU-DB-xCf" secondAttribute="height" id="A75-Ep-06K"/>
+                            <constraint firstItem="PJR-zd-Lrs" firstAttribute="leading" secondItem="qzr-l7-8Km" secondAttribute="leadingMargin" constant="10" id="ACG-JQ-YzD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eGS-0O-VTz" secondAttribute="trailing" constant="-16" id="Dff-g7-66X"/>
+                            <constraint firstItem="xzz-cF-YaS" firstAttribute="top" secondItem="PJR-zd-Lrs" secondAttribute="bottom" constant="30" id="DuB-68-mhW"/>
+                            <constraint firstItem="eGS-0O-VTz" firstAttribute="leading" secondItem="qzr-l7-8Km" secondAttribute="leadingMargin" constant="-16" id="Ob8-Lz-pMk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ID7-Hz-9Ev" secondAttribute="trailing" constant="-16" id="Pa0-Jk-GMo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vPm-XJ-brM" secondAttribute="trailing" constant="10" id="QNy-Gb-RIO"/>
+                            <constraint firstItem="vrm-1q-eNz" firstAttribute="leading" secondItem="xzz-cF-YaS" secondAttribute="trailing" constant="20" id="Qa2-qS-RlN"/>
+                            <constraint firstItem="5T0-ZQ-xUI" firstAttribute="leading" secondItem="vrm-1q-eNz" secondAttribute="trailing" constant="8" id="REf-S3-pF4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5T0-ZQ-xUI" secondAttribute="trailing" constant="10" id="Rrl-eW-uoB"/>
+                            <constraint firstItem="ID7-Hz-9Ev" firstAttribute="height" secondItem="eGS-0O-VTz" secondAttribute="height" id="SKZ-fZ-fjv"/>
+                            <constraint firstItem="5T0-ZQ-xUI" firstAttribute="leading" secondItem="vrm-1q-eNz" secondAttribute="trailing" constant="8" id="UEk-af-g0E"/>
+                            <constraint firstItem="PJR-zd-Lrs" firstAttribute="height" secondItem="xzz-cF-YaS" secondAttribute="height" id="Uac-pi-pMf"/>
+                            <constraint firstItem="xzz-cF-YaS" firstAttribute="top" secondItem="PJR-zd-Lrs" secondAttribute="bottom" constant="30" id="W5J-Od-bKI"/>
+                            <constraint firstItem="vPm-XJ-brM" firstAttribute="top" secondItem="PJR-zd-Lrs" secondAttribute="top" id="WpY-xW-j9l"/>
+                            <constraint firstItem="vPm-XJ-brM" firstAttribute="top" secondItem="uKU-DB-xCf" secondAttribute="top" id="YkI-29-yib"/>
+                            <constraint firstItem="eGS-0O-VTz" firstAttribute="top" secondItem="Fdz-rj-VhB" secondAttribute="bottom" id="ZRs-Bb-kKm"/>
+                            <constraint firstItem="vPm-XJ-brM" firstAttribute="leading" secondItem="uKU-DB-xCf" secondAttribute="trailing" constant="8" id="acI-6O-1n1"/>
+                            <constraint firstItem="PJR-zd-Lrs" firstAttribute="height" secondItem="vPm-XJ-brM" secondAttribute="height" id="bOM-gh-NFk"/>
+                            <constraint firstItem="xzz-cF-YaS" firstAttribute="top" secondItem="5T0-ZQ-xUI" secondAttribute="top" id="fvw-KH-yjd"/>
+                            <constraint firstItem="ID7-Hz-9Ev" firstAttribute="top" secondItem="xzz-cF-YaS" secondAttribute="bottom" constant="30" id="hYG-1z-uDF"/>
+                            <constraint firstItem="ID7-Hz-9Ev" firstAttribute="leading" secondItem="qzr-l7-8Km" secondAttribute="leadingMargin" constant="-16" id="ktp-Kf-J67"/>
+                            <constraint firstItem="jBc-dF-Imc" firstAttribute="top" secondItem="ID7-Hz-9Ev" secondAttribute="bottom" id="lKh-X7-zPF"/>
+                            <constraint firstItem="vPm-XJ-brM" firstAttribute="leading" secondItem="uKU-DB-xCf" secondAttribute="trailing" constant="8" id="lXb-X6-FGV"/>
+                            <constraint firstItem="xzz-cF-YaS" firstAttribute="top" secondItem="vrm-1q-eNz" secondAttribute="top" id="v8d-Bp-yMn"/>
+                            <constraint firstItem="5T0-ZQ-xUI" firstAttribute="leading" secondItem="vrm-1q-eNz" secondAttribute="trailing" constant="8" id="zd6-i1-qYl"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="coffeeDecrementButton" destination="vPm-XJ-brM" id="kxW-aw-8hD"/>
+                        <outlet property="coffeeInput" destination="PJR-zd-Lrs" id="DGY-LV-rq8"/>
+                        <outlet property="waterDecrementButton" destination="5T0-ZQ-xUI" id="lau-lM-qAT"/>
+                        <outlet property="waterInput" destination="xzz-cF-YaS" id="LkZ-Wb-1gg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j4z-oc-L4j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1251" y="274"/>
+        </scene>
+        <!--Timer View Controller-->
+        <scene sceneID="8c9-Zf-0fm">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="noQ-Tl-SiH" customClass="TimerViewController" customModule="CoffeeCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ffI-zH-qmN"/>
+                        <viewControllerLayoutGuide type="bottom" id="d0V-4K-pID"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Sps-GH-VSL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EiR-rH-FmE">
+                                <rect key="frame" x="16" y="48" width="568" height="125"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="125" id="8AN-Ad-eez"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="90"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYS-Vv-joV">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="2"/>
+                                <color key="backgroundColor" white="0.83426706414473684" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="L4v-3Z-o5D"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cafetière (French press) coffee should brew for 3 to 4 minutes." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OFM-6h-vaK">
+                                <rect key="frame" x="16" y="230" width="568" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9hg-vC-0kC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Dd-LA-lUW">
+                                <rect key="frame" x="16" y="10" width="86" height="30"/>
+                                <state key="normal" title="-15 seconds">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="decrementTimer:" destination="noQ-Tl-SiH" eventType="touchUpInside" id="ZCn-jX-Nt8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mMR-qH-VyU">
+                                <rect key="frame" x="495" y="10" width="89" height="30"/>
+                                <state key="normal" title="+15 seconds">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="incrementTimer:" destination="noQ-Tl-SiH" eventType="touchUpInside" id="fq7-DM-Jyi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ukA-rA-kxe">
+                                <rect key="frame" x="238" y="181" width="124" height="41"/>
+                                <color key="backgroundColor" white="0.90344880756578949" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="41" id="Hrg-yB-sMO"/>
+                                    <constraint firstAttribute="width" constant="124" id="lJk-Lr-zGI"/>
+                                </constraints>
+                                <state key="normal" title="Start Timer">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startTimer:" destination="noQ-Tl-SiH" eventType="touchUpInside" id="1T0-6Q-f8Y"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ukA-rA-kxe" firstAttribute="centerX" secondItem="OFM-6h-vaK" secondAttribute="centerX" id="9qm-In-Pv3"/>
+                            <constraint firstItem="ukA-rA-kxe" firstAttribute="top" secondItem="EiR-rH-FmE" secondAttribute="bottom" constant="8" symbolic="YES" id="Cun-0V-3AZ"/>
+                            <constraint firstItem="mMR-qH-VyU" firstAttribute="trailing" secondItem="Sps-GH-VSL" secondAttribute="trailingMargin" id="LIH-v9-ycR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gYS-Vv-joV" secondAttribute="trailing" constant="-16" id="OHe-US-h7K"/>
+                            <constraint firstItem="EiR-rH-FmE" firstAttribute="top" secondItem="mMR-qH-VyU" secondAttribute="bottom" constant="8" id="OrZ-Wo-Ytf"/>
+                            <constraint firstItem="5Dd-LA-lUW" firstAttribute="top" secondItem="gYS-Vv-joV" secondAttribute="bottom" constant="8" id="PgZ-wS-wi8"/>
+                            <constraint firstItem="mMR-qH-VyU" firstAttribute="top" secondItem="gYS-Vv-joV" secondAttribute="bottom" constant="8" id="bWi-WE-06y"/>
+                            <constraint firstItem="gYS-Vv-joV" firstAttribute="top" secondItem="ffI-zH-qmN" secondAttribute="bottom" id="dzf-6K-hg0"/>
+                            <constraint firstItem="OFM-6h-vaK" firstAttribute="leading" secondItem="Sps-GH-VSL" secondAttribute="leadingMargin" id="fyz-rf-dtZ"/>
+                            <constraint firstItem="5Dd-LA-lUW" firstAttribute="leading" secondItem="Sps-GH-VSL" secondAttribute="leadingMargin" id="kn4-Yu-clm"/>
+                            <constraint firstItem="EiR-rH-FmE" firstAttribute="trailing" secondItem="Sps-GH-VSL" secondAttribute="trailingMargin" id="n4V-pd-gn3"/>
+                            <constraint firstItem="d0V-4K-pID" firstAttribute="top" secondItem="OFM-6h-vaK" secondAttribute="bottom" constant="20" id="pUv-vA-WiI"/>
+                            <constraint firstItem="EiR-rH-FmE" firstAttribute="leading" secondItem="Sps-GH-VSL" secondAttribute="leadingMargin" id="tq8-nA-Jhm"/>
+                            <constraint firstItem="gYS-Vv-joV" firstAttribute="leading" secondItem="Sps-GH-VSL" secondAttribute="leadingMargin" constant="-16" id="uMB-Er-owK"/>
+                            <constraint firstItem="OFM-6h-vaK" firstAttribute="trailing" secondItem="Sps-GH-VSL" secondAttribute="trailingMargin" id="uNO-em-FSe"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <connections>
+                        <outlet property="decrementTimerButton" destination="5Dd-LA-lUW" id="gac-78-9oe"/>
+                        <outlet property="incrementTimerButton" destination="mMR-qH-VyU" id="1ks-L0-LIa"/>
+                        <outlet property="startTimerButton" destination="ukA-rA-kxe" id="WYK-Nn-cIX"/>
+                        <outlet property="timerText" destination="EiR-rH-FmE" id="8jO-y3-UO8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rRT-0V-pbu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1251" y="636"/>
         </scene>
     </scenes>
 </document>
