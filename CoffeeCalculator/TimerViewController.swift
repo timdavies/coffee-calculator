@@ -14,6 +14,7 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var incrementTimerButton: UIButton!
     @IBOutlet weak var startTimerButton: UIButton!
     @IBOutlet weak var timerText: UILabel!
+    @IBOutlet weak var coffeeText: UILabel!
     
     var nstimer:NSTimer? = nil
     var timer = 60 * 4
@@ -22,8 +23,19 @@ class TimerViewController: UIViewController {
     var audioPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
+        if (UIScreen.mainScreen().bounds.size.height <= 568.0) {
+            coffeeText.removeFromSuperview()
+        }
+        
         super.viewDidLoad()
+        
         view.backgroundColor = UIColor(hex: 0xFAFAFA)
+        
+        startTimerButton.layer.cornerRadius = 4.0
+        startTimerButton.layer.masksToBounds = true
+        startTimerButton.layer.borderColor = UIColor.grayColor().CGColor
+        startTimerButton.layer.borderWidth = 1.0
+        
         renderTimer()
     }
 
@@ -50,8 +62,7 @@ class TimerViewController: UIViewController {
         } else {
             timerRunning = false
             startTimerButton.setTitle("Start Timer", forState: UIControlState.Normal)
-            decrementTimerButton.enabled = true
-            incrementTimerButton.enabled = true
+            checkTimerChangeButtons()
             nstimer?.invalidate()
             timer = lastTimer
             renderTimer()

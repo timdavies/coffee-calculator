@@ -17,6 +17,8 @@ class CalculatorViewController: UIViewController {
     @IBOutlet weak var waterInput: UITextField!
     @IBOutlet weak var coffeeDecrementButton: UIButton!
     @IBOutlet weak var waterDecrementButton: UIButton!
+    @IBOutlet weak var coffeeIncrementButton: UIButton!
+    @IBOutlet weak var waterIncrementButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,18 @@ class CalculatorViewController: UIViewController {
             field.enabled = false
         }
         
+        for button in [
+            coffeeDecrementButton,
+            coffeeIncrementButton,
+            waterIncrementButton,
+            waterDecrementButton
+        ] {
+            let button = button as UIButton
+            button.layer.cornerRadius = 4.0
+            button.layer.masksToBounds = true
+            button.layer.borderColor = UIColor.grayColor().CGColor
+            button.layer.borderWidth = 1.0
+        }
     }
     
     

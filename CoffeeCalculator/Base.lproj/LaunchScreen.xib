@@ -6,13 +6,26 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <nil key="simulatedStatusBarMetrics"/>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="548" y="455"/>
-        </view>
+        <navigationController id="4Hy-7C-zz5">
+            <navigationBar key="navigationBar" contentMode="scaleToFill" id="tsy-St-Ynt">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+            </navigationBar>
+            <viewControllers>
+                <viewController id="llv-to-XU3">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zpi-hb-M7O"/>
+                        <viewControllerLayoutGuide type="bottom" id="P6E-wF-xfl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fFm-De-4Tf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Coffee Calculator" id="Fof-2M-muc"/>
+                </viewController>
+            </viewControllers>
+            <point key="canvasLocation" x="648" y="582"/>
+        </navigationController>
     </objects>
 </document>
