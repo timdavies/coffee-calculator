@@ -44,6 +44,9 @@ class TimerViewController: UIViewController {
         renderTimer()
     }
     
+    // Method that is called when the start timer button is pressed.
+    // As the start timer button is also used for the reset timer button,
+    // the method checks whether the timer is running or not first.
     @IBAction func startTimer(sender: AnyObject) {
         if (!timerRunning) {
             timerRunning = true
@@ -70,18 +73,25 @@ class TimerViewController: UIViewController {
         }
     }
     
+    // Method for incrementing the timer by 15 seconds:
     @IBAction func incrementTimer(sender: AnyObject) {
         timer += 15
         checkTimerChangeButtons()
         renderTimer()
     }
     
+    // Method for decrementing the timer by 15 seconds:
     @IBAction func decrementTimer(sender: AnyObject) {
         timer -= 15
         checkTimerChangeButtons()
         renderTimer()
     }
     
+    // Method for checking the current value of the timer (before it is started)
+    // and disabling the buttons to increment/decrement it if the timer goes too
+    // high or too low. Currently the timer cannot be longer than 5 minutes or
+    // lower than 2 minutes (as timers this short or long aren't necessary for
+    // brewing coffee).
     func checkTimerChangeButtons() {
         if (timer + 15 > 60 * 5) {
             incrementTimerButton.enabled = false
@@ -96,23 +106,30 @@ class TimerViewController: UIViewController {
         }
     }
     
+    // Method that is called each time the timer ticks (which is every second).
+    // It reduces the timer by a second and renders it.
+    // If the timer reaches 0, it plays timer.mp3 and shows an alert.
     func timerTick() {
         timer--
         
         if (timer == 0) {
+            // Stop the timer:
             nstimer?.invalidate()
             
+            // Start playing timer sound:
             let soundURL = NSBundle.mainBundle().URLForResource("timer", withExtension: "mp3")
             audioPlayer = AVAudioPlayer(contentsOfURL: soundURL, error: nil)
             audioPlayer.play()
             audioPlayer.numberOfLoops = -1
             
+            // Create alert controller for showing "Timer done" message:
             var alert = UIAlertController(
                 title: "Timer done",
                 message: nil,
                 preferredStyle: UIAlertControllerStyle.Alert
             )
             
+            // Add OK button for stopping the timer:
             let alertAction = UIAlertAction(
                 title: "OK",
                 style: UIAlertActionStyle.Default,
@@ -122,26 +139,31 @@ class TimerViewController: UIViewController {
             )
             alert.addAction(alertAction)
             
+            // Show the alert box:
             self.presentViewController(alert, animated: true, completion: nil)
         }
         
         renderTimer()
     }
     
+    // Method for outputting the current timer value into the timer text field
     func renderTimer() {
         var tmp = timer
         
+        // Render minutes:
         var minutes = 0
         while tmp >= 60 {
             tmp -= 60
             minutes += 1
         }
         
+        // Render seconds:
         var seconds = String(tmp)
         if (tmp < 10) {
             seconds = "0" + seconds
         }
         
+        // Output timer text:
         timerText.text = "\(minutes):\(seconds)"
     }
 }
