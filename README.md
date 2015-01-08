@@ -10,4 +10,5 @@ Here's what it looks like:
 
 ![Screenshot of Coffee Calculator](http://i.imgur.com/tfOqJcs.jpg)
 
-The current icon is awful. Would be great to replace it with something better at some point.
+### Icon
+The current icon is awful, even for me. Would be great to replace it with something better at some point. If anyone wants to submit a replacement via pull request, that would be amazing.
