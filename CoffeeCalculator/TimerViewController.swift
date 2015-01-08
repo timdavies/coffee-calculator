@@ -43,10 +43,6 @@ class TimerViewController: UIViewController {
         // Output the current timer (by default, 4:00):
         renderTimer()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
     
     @IBAction func startTimer(sender: AnyObject) {
         if (!timerRunning) {
