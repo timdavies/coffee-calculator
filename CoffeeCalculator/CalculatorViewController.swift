@@ -23,27 +23,23 @@ class CalculatorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for field in [coffeeInput, waterInput] {
-            let field = field as UITextField
-            field.layer.cornerRadius = 4.0
-            field.layer.masksToBounds = true
-            field.layer.borderColor = UIColor.grayColor().CGColor
-            field.layer.borderWidth = 1.0
-            field.enabled = false
+        // Iterate over input and output controls and apply some common
+        // styles (rounded edges, border colour, etc):
+        for control in [
+            coffeeInput, waterInput,
+            coffeeDecrementButton, coffeeIncrementButton,
+            waterIncrementButton, waterDecrementButton
+        ] {
+            control.layer.cornerRadius = 4.0
+            control.layer.masksToBounds = true
+            control.layer.borderColor = UIColor.grayColor().CGColor
+            control.layer.borderWidth = 1.0
         }
         
-        for button in [
-            coffeeDecrementButton,
-            coffeeIncrementButton,
-            waterIncrementButton,
-            waterDecrementButton
-        ] {
-            let button = button as UIButton
-            button.layer.cornerRadius = 4.0
-            button.layer.masksToBounds = true
-            button.layer.borderColor = UIColor.grayColor().CGColor
-            button.layer.borderWidth = 1.0
-        }
+        // Disable input on coffee input and water input fields
+        // as we don't want the keyboard opened:
+        coffeeInput.enabled = false
+        waterInput.enabled = false
     }
     
     
