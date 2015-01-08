@@ -42,19 +42,21 @@ class CalculatorViewController: UIViewController {
         waterInput.enabled = false
     }
     
-    
+    // Method for incrementing the amount of coffee by 1g
     @IBAction func incrementCoffee(sender: AnyObject) {
         coffee += 1
         water = Int((Float(coffee) / 7.0) * 100)
         renderInputs()
     }
     
+    // Method for decrementing the amount of coffee by 1g
     @IBAction func decrementCoffee(sender: AnyObject) {
         coffee -= 1
         water = Int((Float(coffee) / 7.0) * 100)
         renderInputs()
     }
     
+    // Method for incrementing the amount of water by 25ml
     @IBAction func incrementWater(sender: AnyObject) {
         if (water % 25 != 0) {
             water += 25 - (water % 25)
@@ -67,6 +69,7 @@ class CalculatorViewController: UIViewController {
         renderInputs()
     }
     
+    // Method for decrementing the amount of water by 25ml
     @IBAction func decrementWater(sender: AnyObject) {
         if (water % 25 != 0) {
             water -= water % 25
@@ -79,16 +82,22 @@ class CalculatorViewController: UIViewController {
         renderInputs()
     }
     
+    // Method for outputting the latest coffee/water calculations.
+    // Should be called after each alteration to the amounts.
     func renderInputs() {
+        // Output the amount of coffee and water required (with
+        // units appended).
         coffeeInput.text = "\(coffee)g"
         waterInput.text = "\(water)ml"
         
+        // Check whether the coffee decrement button should be enabled:
         if (coffee - 1 <= 0) {
             coffeeDecrementButton.enabled = false
         } else {
             coffeeDecrementButton.enabled = true
         }
         
+        // Check whether the water decrement button should be enabled:
         if (water - 25 <= 0) {
             waterDecrementButton.enabled = false
         } else {
