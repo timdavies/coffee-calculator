@@ -11,6 +11,7 @@
 		22B55BA21A3F22E5008759A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B55BA01A3F22E5008759A3 /* Main.storyboard */; };
 		22B55BA41A3F22E5008759A3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22B55BA31A3F22E5008759A3 /* Images.xcassets */; };
 		22B55BA71A3F22E5008759A3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22B55BA51A3F22E5008759A3 /* LaunchScreen.xib */; };
+		22B55BB31A3F22E5008759A3 /* CoffeeCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B55BB21A3F22E5008759A3 /* CoffeeCalculatorTests.swift */; };
 		22B55BBD1A3F2D4E008759A3 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B55BBC1A3F2D4E008759A3 /* CalculatorViewController.swift */; };
 		22B55BBF1A3F2D5C008759A3 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B55BBE1A3F2D5C008759A3 /* TimerViewController.swift */; };
 		22B55BC11A3F5EF6008759A3 /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B55BC01A3F5EF6008759A3 /* UIColor+Hex.swift */; };
@@ -35,6 +36,8 @@
 		22B55BA31A3F22E5008759A3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		22B55BA61A3F22E5008759A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		22B55BAC1A3F22E5008759A3 /* CoffeeCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoffeeCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		22B55BB11A3F22E5008759A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22B55BB21A3F22E5008759A3 /* CoffeeCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeCalculatorTests.swift; sourceTree = "<group>"; };
 		22B55BBC1A3F2D4E008759A3 /* CalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		22B55BBE1A3F2D5C008759A3 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		22B55BC01A3F5EF6008759A3 /* UIColor+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
@@ -63,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				22B55B991A3F22E5008759A3 /* CoffeeCalculator */,
+				22B55BAF1A3F22E5008759A3 /* CoffeeCalculatorTests */,
 				22B55B981A3F22E5008759A3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,6 +100,23 @@
 			isa = PBXGroup;
 			children = (
 				22B55B9B1A3F22E5008759A3 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		22B55BAF1A3F22E5008759A3 /* CoffeeCalculatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				22B55BB21A3F22E5008759A3 /* CoffeeCalculatorTests.swift */,
+				22B55BB01A3F22E5008759A3 /* Supporting Files */,
+			);
+			path = CoffeeCalculatorTests;
+			sourceTree = "<group>";
+		};
+		22B55BB01A3F22E5008759A3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				22B55BB11A3F22E5008759A3 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -213,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22B55BB31A3F22E5008759A3 /* CoffeeCalculatorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
