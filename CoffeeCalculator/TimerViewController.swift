@@ -23,19 +23,24 @@ class TimerViewController: UIViewController {
     var audioPlayer = AVAudioPlayer()
     
     override func viewDidLoad() {
+        // Remove the coffee text from the screen if the screen is too small.
+        // This is to make sure everything fits on an iPhone 4.
         if (UIScreen.mainScreen().bounds.size.height <= 568.0) {
             coffeeText.removeFromSuperview()
         }
         
         super.viewDidLoad()
         
+        // Set the background colour of the timer area:
         view.backgroundColor = UIColor(hex: 0xFAFAFA)
         
+        // Style the timer button:
         startTimerButton.layer.cornerRadius = 4.0
         startTimerButton.layer.masksToBounds = true
         startTimerButton.layer.borderColor = UIColor.grayColor().CGColor
         startTimerButton.layer.borderWidth = 1.0
         
+        // Output the current timer (by default, 4:00):
         renderTimer()
     }
 
