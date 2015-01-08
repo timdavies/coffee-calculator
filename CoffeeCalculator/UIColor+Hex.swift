@@ -1,6 +1,6 @@
 //  UIColor+Hex.swift
 //  Created by Tim Davies on 09/08/2014.
-//  Copyright (c) 2014 dotty. All rights reserved.
+//  Copyright (c) 2014 Tim Davies. All rights reserved.
 
 import UIKit
 
