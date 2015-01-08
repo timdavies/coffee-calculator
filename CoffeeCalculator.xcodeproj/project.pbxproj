@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		22B55B9D1A3F22E5008759A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B55B9C1A3F22E5008759A3 /* AppDelegate.swift */; };
-		22B55B9F1A3F22E5008759A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B55B9E1A3F22E5008759A3 /* ViewController.swift */; };
 		22B55BA21A3F22E5008759A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22B55BA01A3F22E5008759A3 /* Main.storyboard */; };
 		22B55BA41A3F22E5008759A3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22B55BA31A3F22E5008759A3 /* Images.xcassets */; };
 		22B55BA71A3F22E5008759A3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22B55BA51A3F22E5008759A3 /* LaunchScreen.xib */; };
@@ -33,7 +32,6 @@
 		22B55B971A3F22E5008759A3 /* CoffeeCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoffeeCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B55B9B1A3F22E5008759A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22B55B9C1A3F22E5008759A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		22B55B9E1A3F22E5008759A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		22B55BA11A3F22E5008759A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22B55BA31A3F22E5008759A3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		22B55BA61A3F22E5008759A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -87,7 +85,6 @@
 			children = (
 				22C8DAF81A5EDD8100176A4E /* timer.mp3 */,
 				22B55B9C1A3F22E5008759A3 /* AppDelegate.swift */,
-				22B55B9E1A3F22E5008759A3 /* ViewController.swift */,
 				22B55BA01A3F22E5008759A3 /* Main.storyboard */,
 				22B55BA31A3F22E5008759A3 /* Images.xcassets */,
 				22B55BA51A3F22E5008759A3 /* LaunchScreen.xib */,
@@ -227,7 +224,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				22B55BBF1A3F2D5C008759A3 /* TimerViewController.swift in Sources */,
-				22B55B9F1A3F22E5008759A3 /* ViewController.swift in Sources */,
 				22B55BBD1A3F2D4E008759A3 /* CalculatorViewController.swift in Sources */,
 				22B55B9D1A3F22E5008759A3 /* AppDelegate.swift in Sources */,
 				22B55BC11A3F5EF6008759A3 /* UIColor+Hex.swift in Sources */,
